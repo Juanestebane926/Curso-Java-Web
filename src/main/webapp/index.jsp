@@ -20,6 +20,7 @@
         <nav class="nav-ejercicios">
             <a href="fundamentos/index.jsp">Clase 1: Fundamentos</a>
             <a href="objetos/index.jsp">Clase 2: Objetos</a>
+            <a href="api/index.jsp">Clase 3: API basica</a>
         </nav>
     </header>
 
@@ -43,6 +44,10 @@
             <article class="tarjeta">
                 <h3>Clase 2: Objetos</h3>
                 <p>Clase Estudiante, instancias, listas y reto integrador.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>Clase 3: API basica</h3>
+                <p>Servlets, endpoint GET y ejercicio guiado para estudiantes.</p>
             </article>
         </div>
     </section>

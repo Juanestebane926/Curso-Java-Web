@@ -47,6 +47,11 @@ body {
   border-color: #bfe8da;
 }
 
+.encabezado-api {
+  background: linear-gradient(130deg, #eef6ff, #fbfdff);
+  border-color: #bfd3f5;
+}
+
 .encabezado h1 {
   margin: 0;
   font-size: clamp(1.5rem, 2.5vw, 2.1rem);
