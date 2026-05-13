@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 3 - API basica con Java Servlet</title>
+    <title>Clase 3 - API de estudiantes con GET y POST</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,10 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Clase 3: API basica con Java Servlet</h1>
+        <h1>Clase 3: API de estudiantes con GET y POST</h1>
         <p>
-            Esta clase es una plantilla para crear un endpoint sencillo, entender como se arma en NetBeans
-            y terminar con un ejercicio para completar.
+            Esta clase muestra un servlet completo que responde JSON, primero con GET y luego con POST,
+            para que el estudiante vea un flujo real de entrada, validacion y respuesta.
         </p>
         <nav class="nav-ejercicios">
             <a href="../index.jsp">Menu principal</a>
@@ -29,10 +29,10 @@
     <section class="seccion">
         <h2>Ruta sugerida para la clase</h2>
         <ol class="lista">
-            <li>Ver el endpoint terminado y probar la URL en el navegador.</li>
-            <li>Crear el paquete y el servlet en NetBeans paso a paso.</li>
-            <li>Ubicar cada archivo en la carpeta correcta del proyecto Maven.</li>
-            <li>Completar un ejercicio propio para estudiantes o productos.</li>
+            <li>Ver el GET terminado y probar la URL en el navegador.</li>
+            <li>Crear el servlet en NetBeans y ubicarlo en el paquete correcto.</li>
+            <li>Agregar el POST con lectura de parametros y validacion basica.</li>
+            <li>Entregar el ejercicio final como actividad para los estudiantes.</li>
         </ol>
     </section>
 
@@ -40,16 +40,16 @@
         <h2>Objetivo pedagogico</h2>
         <div class="tarjetas">
             <article class="tarjeta">
-                <h3>Codigo</h3>
-                <p>Crear un endpoint GET que devuelva JSON usando ArrayList para los estudiantes.</p>
+                <h3>GET</h3>
+                <p>Crear un listado basico de 3 estudiantes usando ArrayList y JSON.</p>
             </article>
             <article class="tarjeta">
-                <h3>NetBeans</h3>
-                <p>Crear paquetes, clases y servlet desde cero.</p>
+                <h3>POST</h3>
+                <p>Recibir nombre, edad y nota desde un formulario o Postman.</p>
             </article>
             <article class="tarjeta">
-                <h3>Practica</h3>
-                <p>Completar un endpoint propio sin copiar todo el texto.</p>
+                <h3>Validacion</h3>
+                <p>Responder con error 400 cuando falten datos o no sean numericos.</p>
             </article>
         </div>
     </section>

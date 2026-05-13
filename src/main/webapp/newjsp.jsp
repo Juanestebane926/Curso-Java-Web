@@ -7,7 +7,7 @@
 <p>
     Enlaces directos: <a href="fundamentos/index.jsp">Fundamentos</a> |
     <a href="objetos/index.jsp">Objetos</a> |
-    <a href="api/index.jsp">API basica</a>
+    <a href="api/index.jsp">API de estudiantes</a>
 </p>
 
 <%

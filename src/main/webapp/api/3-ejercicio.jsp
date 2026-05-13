@@ -13,8 +13,8 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Paso 3: Ejercicio para completar</h1>
-        <p>Este ejercicio esta pensado para que cada estudiante escriba su propia version del endpoint.</p>
+        <h1>Paso 3: Ejercicio de clase</h1>
+        <p>Actividad final para que el estudiante reutilice lo aprendido con GET, POST, validacion y JSON.</p>
         <nav class="nav-ejercicios">
             <a href="index.jsp">Menu unidad</a>
             <a href="2-netbeans.jsp">Anterior: Crearlo en NetBeans</a>
@@ -22,55 +22,59 @@
     </header>
 
     <section class="seccion">
-        <h2>Plantilla incompleta</h2>
-        <div class="codigo">
-            <pre>package com.mycompany.mavenproject3.api;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-@WebServlet(name = "____________", urlPatterns = {"/api/____________"})
-public class ____________ extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-
-        try (PrintWriter out = response.getWriter()) {
-            out.print("{");
-            out.print("\"mensaje\":\"____________\",");
-            out.print("\"total\":____________");
-            out.print("}");
-        }
-    }
-}</pre>
+        <h2>Objetivo</h2>
+        <div class="resultado">
+            <p>Que el estudiante reutilice lo que ya vio en la clase anterior, pero ahora:</p>
+            <p>- lea un endpoint GET ya conocido,</p>
+            <p>- simplifique la construccion del JSON,</p>
+            <p>- y agregue un endpoint POST que reciba datos y responda en JSON.</p>
         </div>
     </section>
 
     <section class="seccion">
-        <h2>Que debe completar el alumno</h2>
+        <h2>Lo que deben construir</h2>
         <ol class="lista">
-            <li>Escribir el nombre real de la clase.</li>
-            <li>Definir la ruta del endpoint con <strong>/api/...</strong>.</li>
-            <li>Agregar un mensaje propio en la respuesta JSON.</li>
-            <li>Cambiar el valor de <strong>total</strong> por la cantidad real que quiera mostrar.</li>
-            <li>Opcional: convertir este mismo ejercicio a <strong>productos</strong> en lugar de estudiantes.</li>
+            <li>Clase modelo <strong>Estudiante</strong> con nombre, edad y nota.</li>
+            <li>Constructor, getters y metodo <strong>getEstadoAcademico()</strong>.</li>
+            <li>Servlet principal <strong>EstudianteApiServlet</strong>.</li>
+            <li>Rutas <strong>GET /api/estudiantes</strong> y <strong>POST /api/estudiantes</strong>.</li>
+            <li>GET con una lista de 3 estudiantes fijos en JSON.</li>
+            <li>POST con lectura de parametros, validacion basica y respuesta JSON.</li>
         </ol>
     </section>
 
     <section class="seccion">
-        <h2>Version final esperada</h2>
+        <h2>Validacion minima</h2>
         <div class="resultado">
-            <p>Al terminar, la idea es que el alumno tenga una clase parecida a:</p>
-            <p><strong>EstudianteApiServlet</strong> o <strong>ProductoApiServlet</strong></p>
-            <p>Y una URL tipo:</p>
-            <p><strong>/api/estudiantes</strong> o <strong>/api/productos</strong></p>
+            <p>Antes de crear el objeto, verificar que:</p>
+            <p>- nombre no venga vacio,</p>
+            <p>- edad y nota se puedan convertir a numero.</p>
+            <p>Si falla, devolver JSON de error con codigo HTTP 400.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Pruebas</h2>
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h3>GET</h3>
+                <p>Probar desde el navegador en una URL parecida a <strong>http://localhost:8080/.../api/estudiantes</strong>.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>POST</h3>
+                <p>Enviar desde Postman o similar usando <strong>body x-www-form-urlencoded</strong>.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>Respuesta</h3>
+                <p>El servidor debe devolver JSON limpio, sin construir cada campo con muchos out.print.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Enunciado para el estudiante</h2>
+        <div class="nota">
+            <p>Crea un servlet /api/estudiantes que responda con GET mostrando una lista de 3 estudiantes en JSON, usando un metodo auxiliar para convertir cada estudiante a JSON. Luego agrega POST para recibir un estudiante nuevo con nombre, edad y nota, y devuelve el objeto en JSON. Si el nombre viene vacio o los numeros no son validos, responde con error 400.</p>
         </div>
     </section>
 </div>

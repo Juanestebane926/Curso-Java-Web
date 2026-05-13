@@ -32,8 +32,10 @@
             <li>Clic derecho sobre el paquete <strong>api</strong> y elige <strong>New &gt; Servlet...</strong>.</li>
             <li>Si no ves Servlet, usa <strong>Other...</strong>, luego <strong>Web</strong> y despues <strong>Servlet</strong>.</li>
             <li>Asigna el nombre <strong>EstudianteApiServlet</strong> y termina el asistente.</li>
-            <li>Reemplaza el codigo generado por el de la pagina anterior.</li>
-            <li>Ejecuta el proyecto y prueba la URL del endpoint en el navegador.</li>
+            <li>Reemplaza el codigo generado por la version final del ejercicio.</li>
+            <li>Verifica que la anotacion <strong>@WebServlet</strong> apunte a <strong>/api/estudiantes</strong>.</li>
+            <li>Ejecuta el proyecto y prueba el GET en el navegador.</li>
+            <li>Prueba el POST con un cliente como Postman usando <strong>body x-www-form-urlencoded</strong>.</li>
         </ol>
     </section>
 
@@ -76,7 +78,7 @@
             </article>
             <article class="tarjeta">
                 <h3>Prueba</h3>
-                <p>Si la URL responde JSON, el endpoint quedo listo y la clase ya funciona.</p>
+                <p>Si el GET y el POST responden JSON, el endpoint quedo listo y la clase ya funciona.</p>
             </article>
         </div>
     </section>
