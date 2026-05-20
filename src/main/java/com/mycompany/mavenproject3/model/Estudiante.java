@@ -6,26 +6,11 @@ public class Estudiante {
     private double nota;
 
     public Estudiante(String nombre, int edad, double nota) {
-        // Cuando creemos un estudiante, guardamos sus datos en el objeto.
         this.nombre = nombre;
         this.edad = edad;
         this.nota = nota;
     }
 
-    // Estos metodos sirven para cambiar la informacion del estudiante si hiciera falta.
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public void setNota(double nota) {
-        this.nota = nota;
-    }
-
-    // Estos metodos permiten leer los datos del estudiante.
     public String getNombre() {
         return nombre;
     }
@@ -39,11 +24,9 @@ public class Estudiante {
     }
 
     public String getEstadoAcademico() {
-        // Si la nota es 3.0 o mas, el estudiante aprueba.
         if (nota >= 3.0) {
             return "Aprobado";
         }
-        // Si no llega a 3.0, queda reprobado.
         return "Reprobado";
     }
 
@@ -53,13 +36,25 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        // Cuando Java necesite mostrar este objeto como texto, devolvemos un JSON sencillo.
-        return "{"
-                + "\"nombre\":\"" + nombre + "\"," 
-                + "\"edad\":" + edad + ","
-                + "\"nota\":" + nota + ","
-                + "\"estado\":\"" + getEstadoAcademico() + "\""
-                + "}";
+        // Convertimos el objeto a JSON aqui mismo para que el servlet quede mas limpio.
+        StringBuilder json = new StringBuilder();
+        json.append("{");
+        json.append("\"nombre\":\"").append(escapeJson(nombre)).append("\",");
+        json.append("\"edad\":").append(edad).append(",");
+        json.append("\"nota\":").append(nota).append(",");
+        json.append("\"estado\":\"").append(getEstadoAcademico()).append("\"");
+        json.append("}");
+        return json.toString();
     }
 
+    private String escapeJson(String texto) {
+        if (texto == null) {
+            return "";
+        }
+        return texto
+                .replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\n", " ")
+                .replace("\r", " ");
+    }
 }

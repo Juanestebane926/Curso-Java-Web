@@ -170,3 +170,62 @@ body {
   background: #f4fbf7;
   color: var(--primario-oscuro);
 }
+
+.herramienta-prueba {
+  display: grid;
+  gap: 14px;
+}
+
+.campos-prueba {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.campo-prueba {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--primario-oscuro);
+}
+
+.campo-prueba input {
+  width: 100%;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.acciones-prueba {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acciones-prueba button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: var(--primario);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+}
+
+.acciones-prueba button:hover {
+  background: var(--primario-oscuro);
+}
+
+.salida-prueba {
+  margin: 0;
+  padding: 14px;
+  background: #102923;
+  color: #e4fff7;
+  border-radius: 12px;
+  overflow-x: auto;
+  min-height: 130px;
+}

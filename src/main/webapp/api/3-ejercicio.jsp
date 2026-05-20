@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API 3 - Ejercicio para completar</title>
+    <title>API 3 - Ejercicio guiado</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,68 +13,59 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Paso 3: Ejercicio de clase</h1>
-        <p>Actividad final para que el estudiante reutilice lo aprendido con GET, POST, validacion y JSON.</p>
+        <h1>Paso 3: Ejercicio para la clase</h1>
+        <p>Actividad para que el grupo repita el flujo completo sin mirar el codigo final todo el tiempo.</p>
         <nav class="nav-ejercicios">
             <a href="index.jsp">Menu unidad</a>
             <a href="2-netbeans.jsp">Anterior: Crearlo en NetBeans</a>
+            <a href="4-pruebas.jsp">Siguiente: Pruebas ligeras</a>
         </nav>
     </header>
 
     <section class="seccion">
         <h2>Objetivo</h2>
         <div class="resultado">
-            <p>Que el estudiante reutilice lo que ya vio en la clase anterior, pero ahora:</p>
-            <p>- lea un endpoint GET ya conocido,</p>
-            <p>- simplifique la construccion del JSON,</p>
-            <p>- y agregue un endpoint POST que reciba datos y responda en JSON.</p>
+            <p>Que el estudiante entienda que esta version se compone de cuatro acciones claras:</p>
+            <p>- leer,</p>
+            <p>- crear,</p>
+            <p>- actualizar,</p>
+            <p>- eliminar.</p>
         </div>
     </section>
 
     <section class="seccion">
         <h2>Lo que deben construir</h2>
         <ol class="lista">
-            <li>Clase modelo <strong>Estudiante</strong> con nombre, edad y nota.</li>
-            <li>Constructor, getters y metodo <strong>getEstadoAcademico()</strong>.</li>
-            <li>Servlet principal <strong>EstudianteApiServlet</strong>.</li>
-            <li>Rutas <strong>GET /api/estudiantes</strong> y <strong>POST /api/estudiantes</strong>.</li>
-            <li>GET con una lista de 3 estudiantes fijos en JSON.</li>
-            <li>POST con lectura de parametros, validacion basica y respuesta JSON.</li>
+            <li>Clase <strong>Estudiante</strong> con nombre, edad y nota.</li>
+            <li>Metodo <strong>toString()</strong> para devolver el objeto como JSON.</li>
+            <li>Servlet <strong>EstudianteApiServlet</strong> con GET, POST, PUT y DELETE.</li>
+            <li>Validacion de id, nombre vacio y numeros que no se puedan convertir.</li>
+            <li>Respuesta JSON con codigo 400 o 404 cuando algo falle.</li>
         </ol>
     </section>
 
     <section class="seccion">
-        <h2>Validacion minima</h2>
-        <div class="resultado">
-            <p>Antes de crear el objeto, verificar que:</p>
-            <p>- nombre no venga vacio,</p>
-            <p>- edad y nota se puedan convertir a numero.</p>
-            <p>Si falla, devolver JSON de error con codigo HTTP 400.</p>
-        </div>
-    </section>
-
-    <section class="seccion">
-        <h2>Pruebas</h2>
+        <h2>Preguntas para discutir en clase</h2>
         <div class="tarjetas">
             <article class="tarjeta">
                 <h3>GET</h3>
-                <p>Probar desde el navegador en una URL parecida a <strong>http://localhost:8080/.../api/estudiantes</strong>.</p>
+                <p>Que pasa si llamo a la ruta base y devuelve una lista de estudiantes.</p>
             </article>
             <article class="tarjeta">
-                <h3>POST</h3>
-                <p>Enviar desde Postman o similar usando <strong>body x-www-form-urlencoded</strong>.</p>
+                <h3>PUT</h3>
+                <p>Como llega el id y se reemplazan los datos de un estudiante existente.</p>
             </article>
             <article class="tarjeta">
-                <h3>Respuesta</h3>
-                <p>El servidor debe devolver JSON limpio, sin construir cada campo con muchos out.print.</p>
+                <h3>DELETE</h3>
+                <p>Como se elimina un estudiante cuando el id existe.</p>
             </article>
         </div>
     </section>
 
     <section class="seccion">
-        <h2>Enunciado para el estudiante</h2>
+        <h2>Enunciado corto</h2>
         <div class="nota">
-            <p>Crea un servlet /api/estudiantes que responda con GET mostrando una lista de 3 estudiantes en JSON, usando un metodo auxiliar para convertir cada estudiante a JSON. Luego agrega POST para recibir un estudiante nuevo con nombre, edad y nota, y devuelve el objeto en JSON. Si el nombre viene vacio o los numeros no son validos, responde con error 400.</p>
+            <p>Completa una API de estudiantes en memoria. El GET debe listar, el POST debe crear, el PUT debe actualizar y el DELETE debe eliminar. Toda la comunicacion debe salir en JSON y la prueba debe poder hacerse desde un navegador con fetch.</p>
         </div>
     </section>
 </div>

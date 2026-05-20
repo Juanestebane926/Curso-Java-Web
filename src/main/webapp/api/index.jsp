@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 3 - API de estudiantes con GET y POST</title>
+    <title>Clase 3 - CRUD de estudiantes</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +13,27 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Clase 3: API de estudiantes con GET y POST</h1>
+        <h1>Clase 3: API simple de estudiantes</h1>
         <p>
-            Esta clase muestra un servlet completo que responde JSON, primero con GET y luego con POST,
-            para que el estudiante vea un flujo real de entrada, validacion y respuesta.
+            Esta unidad enseña una API sencilla con JSON, usando una lista en memoria para que la clase sea clara,
+            facil de explicar y rapida de probar en cualquier equipo.
         </p>
         <nav class="nav-ejercicios">
             <a href="../index.jsp">Menu principal</a>
-            <a href="1-endpoint.jsp">1) Endpoint completo</a>
+            <a href="1-endpoint.jsp">1) Como funciona</a>
             <a href="2-netbeans.jsp">2) Crearlo en NetBeans</a>
-            <a href="3-ejercicio.jsp">3) Ejercicio para completar</a>
+            <a href="3-ejercicio.jsp">3) Ejercicio guiado</a>
+            <a href="4-pruebas.jsp">4) Pruebas ligeras</a>
         </nav>
     </header>
 
     <section class="seccion">
         <h2>Ruta sugerida para la clase</h2>
         <ol class="lista">
-            <li>Ver el GET terminado y probar la URL en el navegador.</li>
-            <li>Crear el servlet en NetBeans y ubicarlo en el paquete correcto.</li>
-            <li>Agregar el POST con lectura de parametros y validacion basica.</li>
-            <li>Entregar el ejercicio final como actividad para los estudiantes.</li>
+            <li>Empieza por la estructura del modelo <strong>Estudiante</strong>.</li>
+            <li>Explica que el servlet arma una lista en memoria con <strong>ArrayList</strong>.</li>
+            <li>Recorre los verbos que veran en esta clase: GET, POST, PUT y DELETE.</li>
+            <li>Cierra con la pagina de pruebas para demostrarlo desde el navegador.</li>
         </ol>
     </section>
 
@@ -41,20 +42,27 @@
         <div class="tarjetas">
             <article class="tarjeta">
                 <h3>GET</h3>
-                <p>Crear un listado basico de 3 estudiantes usando ArrayList y JSON.</p>
+                <p>Leer todos los estudiantes y devolverlos en JSON.</p>
             </article>
             <article class="tarjeta">
                 <h3>POST</h3>
-                <p>Recibir nombre, edad y nota desde un formulario o Postman.</p>
+                <p>Crear un estudiante nuevo con nombre, edad y nota.</p>
             </article>
             <article class="tarjeta">
-                <h3>Validacion</h3>
-                <p>Responder con error 400 cuando falten datos o no sean numericos.</p>
+                <h3>PUT y DELETE</h3>
+                <p>Actualizar y eliminar un estudiante usando su id.</p>
             </article>
         </div>
     </section>
 
-    <p class="pie">Ruta sugerida: 1 -> 2 -> 3.</p>
+    <section class="seccion">
+        <h2>Lo que va a aprender el estudiante</h2>
+        <div class="resultado">
+            <p>Que un servlet puede recibir datos, validar y responder en JSON sin usar estructuras complicadas ni base de datos.</p>
+        </div>
+    </section>
+
+    <p class="pie">Ruta sugerida: 1 -> 2 -> 3 -> 4.</p>
 </div>
 </body>
 </html>

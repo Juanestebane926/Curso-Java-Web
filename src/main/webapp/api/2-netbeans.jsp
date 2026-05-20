@@ -14,28 +14,25 @@
 <div class="contenedor">
     <header class="encabezado encabezado-api">
         <h1>Paso 2: Como crearlo en NetBeans</h1>
-        <p>Aqui va la ruta exacta para que el alumno sepa donde hacer clic y en que carpeta crear cada cosa.</p>
+        <p>Aqui esta la ruta exacta para crear el modelo, el servlet y la pagina de pruebas sin perder tiempo buscando carpetas.</p>
         <nav class="nav-ejercicios">
             <a href="index.jsp">Menu unidad</a>
-            <a href="1-endpoint.jsp">Anterior: Endpoint completo</a>
-            <a href="3-ejercicio.jsp">Siguiente: Ejercicio para completar</a>
+            <a href="1-endpoint.jsp">Anterior: Como funciona</a>
+            <a href="3-ejercicio.jsp">Siguiente: Ejercicio guiado</a>
         </nav>
     </header>
 
     <section class="seccion">
         <h2>Pasos exactos en NetBeans</h2>
         <ol class="lista">
-            <li>Abre el proyecto Maven <strong>mavenproject3</strong> en la ventana <strong>Projects</strong>.</li>
-            <li>Despliega <strong>Source Packages</strong> y ubica el paquete <strong>com.mycompany.mavenproject3</strong>.</li>
-            <li>Clic derecho sobre <strong>com.mycompany.mavenproject3</strong> y elige <strong>New &gt; Java Package</strong>.</li>
-            <li>Escribe <strong>api</strong> como nombre del paquete. Al guardar, quedara en <strong>src/main/java/com/mycompany/mavenproject3/api</strong>.</li>
-            <li>Clic derecho sobre el paquete <strong>api</strong> y elige <strong>New &gt; Servlet...</strong>.</li>
-            <li>Si no ves Servlet, usa <strong>Other...</strong>, luego <strong>Web</strong> y despues <strong>Servlet</strong>.</li>
-            <li>Asigna el nombre <strong>EstudianteApiServlet</strong> y termina el asistente.</li>
-            <li>Reemplaza el codigo generado por la version final del ejercicio.</li>
-            <li>Verifica que la anotacion <strong>@WebServlet</strong> apunte a <strong>/api/estudiantes</strong>.</li>
-            <li>Ejecuta el proyecto y prueba el GET en el navegador.</li>
-            <li>Prueba el POST con un cliente como Postman usando <strong>body x-www-form-urlencoded</strong>.</li>
+            <li>Abre el proyecto Maven <strong>mavenproject3</strong> en <strong>Projects</strong>.</li>
+            <li>En <strong>Source Packages</strong>, ubica <strong>com.mycompany.mavenproject3</strong>.</li>
+            <li>Crea el paquete <strong>api</strong> si todavia no existe.</li>
+            <li>Crea o reemplaza la clase <strong>EstudianteApiServlet</strong> dentro de <strong>api</strong>.</li>
+            <li>Usa la anotacion <strong>@WebServlet("/api/estudiantes")</strong>.</li>
+            <li>Reemplaza la clase <strong>Estudiante</strong> dentro de <strong>model</strong> por la version sencilla con nombre, edad y nota.</li>
+            <li>Ejecuta el proyecto y prueba primero el GET en el navegador.</li>
+            <li>Despues prueba POST, PUT y DELETE desde la pagina de pruebas o desde fetch.</li>
         </ol>
     </section>
 
@@ -51,34 +48,34 @@
             <tbody>
             <tr>
                 <td>src/main/java/com/mycompany/mavenproject3/api</td>
-                <td>La clase del servlet que responde el endpoint.</td>
+                <td>El servlet que responde GET, POST, PUT y DELETE.</td>
+            </tr>
+            <tr>
+                <td>src/main/java/com/mycompany/mavenproject3/model</td>
+                <td>La clase Estudiante con getters y toString() JSON.</td>
             </tr>
             <tr>
                 <td>src/main/webapp/api</td>
-                <td>Las paginas JSP de esta clase didactica.</td>
+                <td>Las paginas JSP explicativas y la herramienta de prueba.</td>
             </tr>
-            <tr>
-                <td>src/main/webapp/WEB-INF</td>
-                <td>Configuracion opcional si quieres registrar el servlet en web.xml.</td>
-            </tr>
-            </tbody>
+        </tbody>
         </table>
     </section>
 
     <section class="seccion">
-        <h2>Lo mas importante</h2>
+        <h2>Orden recomendado para construirlo</h2>
         <div class="tarjetas">
             <article class="tarjeta">
-                <h3>Paquete</h3>
-                <p>El paquete <strong>api</strong> separa esta clase de las paginas JSP del resto del proyecto.</p>
+                <h3>1. Modelo</h3>
+                <p>Primero crea la clase <strong>Estudiante</strong> porque el servlet depende de ella.</p>
             </article>
             <article class="tarjeta">
-                <h3>Ruta</h3>
-                <p>La anotacion <strong>@WebServlet</strong> conecta el codigo Java con la URL del navegador.</p>
+                <h3>2. Servlet</h3>
+                <p>Despues arma el endpoint y la logica de GET, POST, PUT y DELETE en memoria.</p>
             </article>
             <article class="tarjeta">
-                <h3>Prueba</h3>
-                <p>Si el GET y el POST responden JSON, el endpoint quedo listo y la clase ya funciona.</p>
+                <h3>3. Prueba</h3>
+                <p>Por ultimo, usa la pagina de pruebas para demostrar el resultado sin instalar nada extra.</p>
             </article>
         </div>
     </section>
