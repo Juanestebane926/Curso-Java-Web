@@ -20,7 +20,7 @@
         <nav class="nav-ejercicios">
             <a href="fundamentos/index.jsp">Clase 1: Fundamentos</a>
             <a href="objetos/index.jsp">Clase 2: Objetos</a>
-            <a href="api/index.jsp">Clase 3: API basica</a>
+            <a href="api/index.jsp">Clase 3: CRUD de estudiantes</a>
         </nav>
     </header>
 
@@ -46,8 +46,8 @@
                 <p>Clase Estudiante, instancias, listas y reto integrador.</p>
             </article>
             <article class="tarjeta">
-                <h3>Clase 3: API basica</h3>
-                <p>Servlets, endpoint GET y ejercicio guiado para estudiantes.</p>
+                <h3>Clase 3: CRUD de estudiantes</h3>
+                <p>Servlets, JSON, GET, POST, PUT, DELETE y prueba ligera desde el navegador.</p>
             </article>
         </div>
     </section>

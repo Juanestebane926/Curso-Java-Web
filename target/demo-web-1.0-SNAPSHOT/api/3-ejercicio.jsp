@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API 3 - Ejercicio para completar</title>
+    <title>API 3 - Ejercicio guiado</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,64 +13,59 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Paso 3: Ejercicio para completar</h1>
-        <p>Este ejercicio esta pensado para que cada estudiante escriba su propia version del endpoint.</p>
+        <h1>Paso 3: Ejercicio para la clase</h1>
+        <p>Actividad para que el grupo repita el flujo completo sin mirar el codigo final todo el tiempo.</p>
         <nav class="nav-ejercicios">
             <a href="index.jsp">Menu unidad</a>
             <a href="2-netbeans.jsp">Anterior: Crearlo en NetBeans</a>
+            <a href="4-pruebas.jsp">Siguiente: Pruebas ligeras</a>
         </nav>
     </header>
 
     <section class="seccion">
-        <h2>Plantilla incompleta</h2>
-        <div class="codigo">
-            <pre>package com.mycompany.mavenproject3.api;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-@WebServlet(name = "____________", urlPatterns = {"/api/____________"})
-public class ____________ extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("application/json;charset=UTF-8");
-
-        try (PrintWriter out = response.getWriter()) {
-            out.print("{");
-            out.print("\"mensaje\":\"____________\",");
-            out.print("\"total\":____________");
-            out.print("}");
-        }
-    }
-}</pre>
+        <h2>Objetivo</h2>
+        <div class="resultado">
+            <p>Que el estudiante entienda que esta version se compone de cuatro acciones claras:</p>
+            <p>- leer,</p>
+            <p>- crear,</p>
+            <p>- actualizar,</p>
+            <p>- eliminar.</p>
         </div>
     </section>
 
     <section class="seccion">
-        <h2>Que debe completar el alumno</h2>
+        <h2>Lo que deben construir</h2>
         <ol class="lista">
-            <li>Escribir el nombre real de la clase.</li>
-            <li>Definir la ruta del endpoint con <strong>/api/...</strong>.</li>
-            <li>Agregar un mensaje propio en la respuesta JSON.</li>
-            <li>Cambiar el valor de <strong>total</strong> por la cantidad real que quiera mostrar.</li>
-            <li>Opcional: convertir este mismo ejercicio a <strong>productos</strong> en lugar de estudiantes.</li>
+            <li>Clase <strong>Estudiante</strong> con nombre, edad y nota.</li>
+            <li>Metodo <strong>toString()</strong> para devolver el objeto como JSON.</li>
+            <li>Servlet <strong>EstudianteApiServlet</strong> con GET, POST, PUT y DELETE.</li>
+            <li>Validacion de id, nombre vacio y numeros que no se puedan convertir.</li>
+            <li>Respuesta JSON con codigo 400 o 404 cuando algo falle.</li>
         </ol>
     </section>
 
     <section class="seccion">
-        <h2>Version final esperada</h2>
-        <div class="resultado">
-            <p>Al terminar, la idea es que el alumno tenga una clase parecida a:</p>
-            <p><strong>EstudianteApiServlet</strong> o <strong>ProductoApiServlet</strong></p>
-            <p>Y una URL tipo:</p>
-            <p><strong>/api/estudiantes</strong> o <strong>/api/productos</strong></p>
+        <h2>Preguntas para discutir en clase</h2>
+        <div class="tarjetas">
+            <article class="tarjeta">
+                <h3>GET</h3>
+                <p>Que pasa si llamo a la ruta base y devuelve una lista de estudiantes.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>PUT</h3>
+                <p>Como llega el id y se reemplazan los datos de un estudiante existente.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>DELETE</h3>
+                <p>Como se elimina un estudiante cuando el id existe.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <h2>Enunciado corto</h2>
+        <div class="nota">
+            <p>Completa una API de estudiantes en memoria. El GET debe listar, el POST debe crear, el PUT debe actualizar y el DELETE debe eliminar. Toda la comunicacion debe salir en JSON y la prueba debe poder hacerse desde un navegador con fetch.</p>
         </div>
     </section>
 </div>

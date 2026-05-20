@@ -11,6 +11,16 @@
         <servlet-name>EstudianteServlet</servlet-name>
         <url-pattern>/EstudianteServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EstudianteApiServlet</servlet-name>
+        <servlet-class>com.mycompany.mavenproject3.api.EstudianteApiServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EstudianteApiServlet</servlet-name>
+        <url-pattern>/api/estudiantes</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30

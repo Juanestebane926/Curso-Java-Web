@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 3 - API basica con Java Servlet</title>
+    <title>Clase 3 - CRUD de estudiantes</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +13,27 @@
 <body>
 <div class="contenedor">
     <header class="encabezado encabezado-api">
-        <h1>Clase 3: API basica con Java Servlet</h1>
+        <h1>Clase 3: API simple de estudiantes</h1>
         <p>
-            Esta clase es una plantilla para crear un endpoint sencillo, entender como se arma en NetBeans
-            y terminar con un ejercicio para completar.
+            Esta unidad enseña una API sencilla con JSON, usando una lista en memoria para que la clase sea clara,
+            facil de explicar y rapida de probar en cualquier equipo.
         </p>
         <nav class="nav-ejercicios">
             <a href="../index.jsp">Menu principal</a>
-            <a href="1-endpoint.jsp">1) Endpoint completo</a>
+            <a href="1-endpoint.jsp">1) Como funciona</a>
             <a href="2-netbeans.jsp">2) Crearlo en NetBeans</a>
-            <a href="3-ejercicio.jsp">3) Ejercicio para completar</a>
+            <a href="3-ejercicio.jsp">3) Ejercicio guiado</a>
+            <a href="4-pruebas.jsp">4) Pruebas ligeras</a>
         </nav>
     </header>
 
     <section class="seccion">
         <h2>Ruta sugerida para la clase</h2>
         <ol class="lista">
-            <li>Ver el endpoint terminado y probar la URL en el navegador.</li>
-            <li>Crear el paquete y el servlet en NetBeans paso a paso.</li>
-            <li>Ubicar cada archivo en la carpeta correcta del proyecto Maven.</li>
-            <li>Completar un ejercicio propio para estudiantes o productos.</li>
+            <li>Empieza por la estructura del modelo <strong>Estudiante</strong>.</li>
+            <li>Explica que el servlet arma una lista en memoria con <strong>ArrayList</strong>.</li>
+            <li>Recorre los verbos que veran en esta clase: GET, POST, PUT y DELETE.</li>
+            <li>Cierra con la pagina de pruebas para demostrarlo desde el navegador.</li>
         </ol>
     </section>
 
@@ -40,21 +41,28 @@
         <h2>Objetivo pedagogico</h2>
         <div class="tarjetas">
             <article class="tarjeta">
-                <h3>Codigo</h3>
-                <p>Crear un endpoint GET que devuelva JSON usando ArrayList para los estudiantes.</p>
+                <h3>GET</h3>
+                <p>Leer todos los estudiantes y devolverlos en JSON.</p>
             </article>
             <article class="tarjeta">
-                <h3>NetBeans</h3>
-                <p>Crear paquetes, clases y servlet desde cero.</p>
+                <h3>POST</h3>
+                <p>Crear un estudiante nuevo con nombre, edad y nota.</p>
             </article>
             <article class="tarjeta">
-                <h3>Practica</h3>
-                <p>Completar un endpoint propio sin copiar todo el texto.</p>
+                <h3>PUT y DELETE</h3>
+                <p>Actualizar y eliminar un estudiante usando su id.</p>
             </article>
         </div>
     </section>
 
-    <p class="pie">Ruta sugerida: 1 -> 2 -> 3.</p>
+    <section class="seccion">
+        <h2>Lo que va a aprender el estudiante</h2>
+        <div class="resultado">
+            <p>Que un servlet puede recibir datos, validar y responder en JSON sin usar estructuras complicadas ni base de datos.</p>
+        </div>
+    </section>
+
+    <p class="pie">Ruta sugerida: 1 -> 2 -> 3 -> 4.</p>
 </div>
 </body>
 </html>
