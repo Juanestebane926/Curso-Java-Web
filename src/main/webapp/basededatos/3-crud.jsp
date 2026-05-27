@@ -25,6 +25,33 @@
         #respuesta   { background: #1e1e2e; color: #cdd6f4; padding: 16px; border-radius: 8px;
                        font-family: monospace; font-size: 14px; white-space: pre-wrap; min-height: 60px; }
         .separador   { border: none; border-top: 1px solid #e0e0e0; margin: 24px 0; }
+
+        /* Estado de carga */
+        .cargando {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: #fff8e1;
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            font-weight: 700;
+            color: #7a5900;
+            margin-top: 12px;
+        }
+        .cargando.visible { display: flex; }
+        .spinner {
+            width: 20px; height: 20px;
+            border: 3px solid #ffe082;
+            border-top-color: #f59e0b;
+            border-radius: 50%;
+            animation: girar 0.7s linear infinite;
+            flex-shrink: 0;
+        }
+        @keyframes girar { to { transform: rotate(360deg); } }
+
+        /* Deshabilitar botones mientras carga */
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
     </style>
 </head>
 <body>
@@ -125,6 +152,10 @@
 
     <section class="seccion">
         <h2>Respuesta del servidor</h2>
+        <div id="cargando" class="cargando">
+            <div class="spinner"></div>
+            <span id="cargando-texto">Conectando con la base de datos...</span>
+        </div>
         <div id="respuesta">La respuesta del servidor aparece aqui...</div>
     </section>
 </div>
@@ -132,15 +163,35 @@
 <script>
     const URL_API = '../api/estudiantes-bd';
 
+    // Todos los botones de la pagina para deshabilitarlos mientras carga
+    function getBotones() {
+        return document.querySelectorAll('.btn');
+    }
+
+    function iniciarCarga(mensaje) {
+        document.getElementById('cargando-texto').textContent = mensaje;
+        document.getElementById('cargando').classList.add('visible');
+        document.getElementById('respuesta').textContent = '';
+        getBotones().forEach(btn => btn.disabled = true);
+    }
+
+    function terminarCarga() {
+        document.getElementById('cargando').classList.remove('visible');
+        getBotones().forEach(btn => btn.disabled = false);
+    }
+
     function mostrar(data) {
+        terminarCarga();
         document.getElementById('respuesta').textContent = JSON.stringify(data, null, 2);
     }
 
     function mostrarError(err) {
+        terminarCarga();
         document.getElementById('respuesta').textContent = 'Error de red: ' + err;
     }
 
     function listar() {
+        iniciarCarga('Consultando todos los estudiantes...');
         fetch(URL_API)
             .then(r => r.json())
             .then(mostrar)
@@ -153,6 +204,7 @@
         params.append('edad',   document.getElementById('edad-post').value);
         params.append('nota',   document.getElementById('nota-post').value);
 
+        iniciarCarga('Guardando estudiante en la base de datos...');
         fetch(URL_API, { method: 'POST', body: params })
             .then(r => r.json())
             .then(mostrar)
@@ -166,6 +218,7 @@
         params.append('edad',   document.getElementById('edad-put').value);
         params.append('nota',   document.getElementById('nota-put').value);
 
+        iniciarCarga('Actualizando estudiante en la base de datos...');
         fetch(URL_API + '?' + params.toString(), { method: 'PUT', body: params })
             .then(r => r.json())
             .then(mostrar)
@@ -174,6 +227,7 @@
 
     function eliminar() {
         const id = document.getElementById('id-delete').value;
+        iniciarCarga('Eliminando estudiante de la base de datos...');
         fetch(URL_API + '?id=' + id, { method: 'DELETE' })
             .then(r => r.json())
             .then(mostrar)
