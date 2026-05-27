@@ -21,6 +21,7 @@
             <a href="fundamentos/index.jsp">Clase 1: Fundamentos</a>
             <a href="objetos/index.jsp">Clase 2: Objetos</a>
             <a href="api/index.jsp">Clase 3: CRUD de estudiantes</a>
+            <a href="basededatos/index.jsp">Clase 4: Base de datos con JDBC</a>
         </nav>
     </header>
 
@@ -48,6 +49,10 @@
             <article class="tarjeta">
                 <h3>Clase 3: CRUD de estudiantes</h3>
                 <p>Servlets, JSON, GET, POST, PUT, DELETE y prueba ligera desde el navegador.</p>
+            </article>
+            <article class="tarjeta">
+                <h3>Clase 4: Base de datos con JDBC</h3>
+                <p>Conexion a MySQL, patron DAO, patron DTO, PreparedStatement y CRUD persistente desde la web.</p>
             </article>
         </div>
     </section>
