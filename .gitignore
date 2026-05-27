@@ -1,6 +1,3 @@
-# Artefactos de compilacion Maven - no van al repositorio
-target/
-
 # Archivos de configuracion local de NetBeans
 nbactions.xml
 nb-configuration.xml
