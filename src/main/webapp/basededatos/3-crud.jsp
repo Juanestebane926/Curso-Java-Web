@@ -182,12 +182,16 @@
 
     function mostrar(data) {
         terminarCarga();
-        document.getElementById('respuesta').textContent = JSON.stringify(data, null, 2);
+        const el = document.getElementById('respuesta');
+        el.textContent = JSON.stringify(data, null, 2);
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function mostrarError(err) {
         terminarCarga();
-        document.getElementById('respuesta').textContent = 'Error de red: ' + err;
+        const el = document.getElementById('respuesta');
+        el.textContent = 'Error de red: ' + err;
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function listar() {
