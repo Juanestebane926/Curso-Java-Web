@@ -98,30 +98,32 @@ try (Connection con = DatabaseConfig.getConexion()) {
     <section class="seccion">
         <h2>Base de datos gratuita para la clase</h2>
         <div class="nota">
-            <p><strong>Servicio recomendado:</strong> db4free.net</p>
-            <p><strong>Como registrarse:</strong> entrar a db4free.net, crear una cuenta gratuita, anotar el usuario, contrasena y nombre de BD.</p>
-            <p><strong>Host:</strong> db4free.net &nbsp; | &nbsp; <strong>Puerto:</strong> 3306</p>
+            <p><strong>Servicio recomendado:</strong> freedb.tech</p>
+            <p><strong>Como registrarse:</strong> entrar a freedb.tech, crear una cuenta gratuita sin tarjeta.
+               El sitio genera automaticamente el nombre de BD, usuario y contrasena.</p>
+            <p><strong>Host:</strong> sql.freedb.tech &nbsp; | &nbsp; <strong>Puerto:</strong> 3306</p>
             <p>El docente crea una sola cuenta y comparte las credenciales con todos los estudiantes.
                Todos veran los mismos datos en tiempo real: eso hace la clase mas interactiva.</p>
-            <p><strong>Limite:</strong> Es un servidor de pruebas. No usar para produccion ni datos reales.</p>
+            <p><strong>Importante:</strong> La cuenta gratuita se elimina despues de 24 horas sin actividad.
+               Para la clase esto es suficiente. Para uso continuo, renovar el acceso desde el panel de freedb.tech.</p>
         </div>
     </section>
 
     <section class="seccion">
         <h2>Configuracion en el proyecto</h2>
-        <p>Abrir el archivo <strong>db/DatabaseConfig.java</strong> y cambiar estos cuatro valores:</p>
+        <p>Abrir el archivo <strong>db/DatabaseConfig.java</strong> y reemplazar estos valores con los que da freedb.tech al registrarse:</p>
         <div class="codigo">
-            <pre>private static final String HOST    = "db4free.net";
-private static final String PUERTO  = "3306";
-private static final String NOMBRE  = "nombre_bd_aqui";   // &lt;-- cambiar
-private static final String USUARIO = "usuario_aqui";     // &lt;-- cambiar
-private static final String CLAVE   = "contrasena_aqui";  // &lt;-- cambiar</pre>
+            <pre>private static final String HOST    = "sql.freedb.tech";  // siempre es este
+private static final String PUERTO  = "3306";              // siempre es este
+private static final String NOMBRE  = "freedb_XXXXX";     // &lt;-- el que te dio freedb.tech
+private static final String USUARIO = "u_XXXXX";          // &lt;-- el que te dio freedb.tech
+private static final String CLAVE   = "tu_contrasena";    // &lt;-- el que te dio freedb.tech</pre>
         </div>
     </section>
 
     <section class="seccion">
         <h2>SQL para crear la tabla</h2>
-        <p>Ejecutar en phpMyAdmin o en cualquier cliente MySQL conectado a db4free.net:</p>
+        <p>Ejecutar en el phpMyAdmin de freedb.tech antes de iniciar la clase:</p>
         <div class="codigo">
             <pre>CREATE TABLE IF NOT EXISTS estudiantes (
     id     INT AUTO_INCREMENT PRIMARY KEY,
@@ -130,7 +132,7 @@ private static final String CLAVE   = "contrasena_aqui";  // &lt;-- cambiar</pre
     nota   DOUBLE       NOT NULL
 );</pre>
         </div>
-        <p>db4free.net incluye phpMyAdmin en la misma web: acceder con el mismo usuario y contrasena.</p>
+        <p>El acceso a phpMyAdmin aparece en el panel de freedb.tech despues de crear la cuenta.</p>
     </section>
 </div>
 </body>
