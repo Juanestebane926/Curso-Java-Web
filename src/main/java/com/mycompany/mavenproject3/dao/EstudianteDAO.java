@@ -19,6 +19,25 @@ import java.util.List;
 public class EstudianteDAO {
 
     // ---------------------------------------------------------------
+    // CREATE TABLE: crea la tabla si todavia no existe
+    // Se llama una sola vez desde el init() del servlet.
+    // IF NOT EXISTS hace que sea seguro llamarlo multiples veces.
+    // ---------------------------------------------------------------
+    public void crearTablasSiNoExisten() throws SQLException {
+        String sql = "CREATE TABLE IF NOT EXISTS estudiantes ("
+                + "id     INT AUTO_INCREMENT PRIMARY KEY,"
+                + "nombre VARCHAR(100) NOT NULL,"
+                + "edad   INT          NOT NULL,"
+                + "nota   DOUBLE       NOT NULL"
+                + ")";
+
+        try (Connection con = DatabaseConfig.getConexion();
+             Statement st = con.createStatement()) {
+            st.executeUpdate(sql);
+        }
+    }
+
+    // ---------------------------------------------------------------
     // SELECT: traer todos los estudiantes
     // ---------------------------------------------------------------
     public List<Estudiante> listar() throws SQLException {

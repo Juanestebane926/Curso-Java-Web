@@ -24,6 +24,18 @@ public class EstudianteBDApiServlet extends HttpServlet {
     private final EstudianteDAO dao = new EstudianteDAO();
 
     @Override
+    public void init() throws ServletException {
+        super.init();
+        // Al arrancar el servidor, nos aseguramos de que la tabla exista.
+        // Si ya existe, IF NOT EXISTS hace que no pase nada.
+        try {
+            dao.crearTablasSiNoExisten();
+        } catch (SQLException e) {
+            throw new ServletException("No se pudo crear la tabla de estudiantes: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
