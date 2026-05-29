@@ -1,5 +1,6 @@
-com\mycompany\mavenproject3\db\DatabaseConfig.class
-com\mycompany\mavenproject3\api\EstudianteBDApiServlet.class
 com\mycompany\mavenproject3\model\Estudiante.class
-com\mycompany\mavenproject3\api\EstudianteApiServlet.class
 com\mycompany\mavenproject3\dao\EstudianteDAO.class
+com\mycompany\mavenproject3\db\DatabaseConfig.class
+com\mycompany\mavenproject3\filter\CorsFilter.class
+com\mycompany\mavenproject3\api\EstudianteBDApiServlet.class
+com\mycompany\mavenproject3\api\EstudianteApiServlet.class
